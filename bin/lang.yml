@@ -1,0 +1,11 @@
+#### GHStudios
+#### https://gamehoundsinteractive.com
+#### Version 2.0
+
+lang:
+  OnlyPlayer: 'Sorry, but this command can only be used as a player.'
+  UsedKey: 'Sorry, your key has already been redeemed. Please contact an admin or buy a new one.'
+  NotValid: 'Sorry, your key is not valid.'
+  SuccessRedeem: 'You have successfully redeemed the license key, Enjoy your new package!'
+  Help: 'Please use the license key shown on your forums purchase at https://sitehere.com'
+  NoPermission: 'Sorry, You do not have permission to use this command'

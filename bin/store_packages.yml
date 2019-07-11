@@ -1,0 +1,8 @@
+#### GHStudios
+#### https://gamehoundsinteractive.com
+#### Version 2.0
+
+packages:
+  example:
+    - 'give %player% diamond 64'
+    - 'msg %player% You got 64 diamonds!'

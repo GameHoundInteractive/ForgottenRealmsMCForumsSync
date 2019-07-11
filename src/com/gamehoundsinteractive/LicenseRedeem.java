@@ -15,8 +15,6 @@ public class LicenseRedeem extends JavaPlugin
 
 		// Welcome Message
 
-		System.out.println(ChatColor.GOLD + "");
-
-
+		System.out.println(ChatColor.GOLD + "Coming Soon!");
 	}
 }

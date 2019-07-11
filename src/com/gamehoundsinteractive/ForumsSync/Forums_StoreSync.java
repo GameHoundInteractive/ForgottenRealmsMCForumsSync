@@ -8,12 +8,12 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import com.gamehoundsinteractive.ConfigManager;
+import com.gamehoundsinteractive.LicenseRedeem;
 import com.gamehoundsinteractive.SQLManager;
 
-public class Forums_StoreSync extends JavaPlugin {
+public class Forums_StoreSync extends LicenseRedeem {
 
 	private ConfigManager configMan;
 	private SQLManager sqlMan;
@@ -21,15 +21,15 @@ public class Forums_StoreSync extends JavaPlugin {
 	@Override
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		if (!(sender instanceof Player || (sender.hasPermission(this.configMan.config.getString("Permission"))))) {
-			sender.sendMessage(this.configMan.config.getString("messages.OnlyPlayer"));
+			sender.sendMessage(this.configMan.lang.getString("lang.OnlyPlayer"));
 			return true;
 		}
 		if (args.length == 0) {
-			sender.sendMessage(this.configMan.config.getString("lang.Help"));
+			sender.sendMessage(this.configMan.lang.getString("lang.Help"));
 			return true;
 		}
 		if (args[0].equalsIgnoreCase("help")) {
-			sender.sendMessage(this.configMan.config.getString("lang.Help"));
+			sender.sendMessage(this.configMan.lang.getString("lang.Help"));
 			return true;
 		}
 		try {
@@ -43,14 +43,14 @@ public class Forums_StoreSync extends JavaPlugin {
 				++count;
 			}
 			if (count == 0) {
-				sender.sendMessage(this.configMan.config.getString("lang.NotValid"));
+				sender.sendMessage(this.configMan.lang.getString("lang.NotValid"));
 				return true;
 			}
 			if (result.isAfterLast()) {
 				result.previous();
 			}
 			if (result.getInt(1) != 1) {
-				sender.sendMessage(this.configMan.config.getString("lang.UsedKey"));
+				sender.sendMessage(this.configMan.lang.getString("lang.UsedKey"));
 				return true;
 			}
 			final ResultSet result2 = this.sqlMan.runSQL("SELECT * FROM nexus_purchases WHERE ps_id='" + result.getInt(2) + "'", false);
@@ -61,11 +61,11 @@ public class Forums_StoreSync extends JavaPlugin {
 				}
 			}
 			result2.last();
-			for (final String command : this.getConfig().getStringList("packages." + result2.getString(3))) {
+			for (final String command : this.configMan.store_packages.getStringList("packages." + result2.getString(3))) {
 				Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", sender.getName()));
 			}
 			this.sqlMan.runSQL("UPDATE nexus_licensekeys SET lkey_active=0, lkey_uses=1 WHERE lkey_key='" + args[0] + "'", true);
-			sender.sendMessage(this.configMan.config.getString("lang.SuccessRedeem"));
+			sender.sendMessage(this.configMan.lang.getString("lang.SuccessRedeem"));
 		}
 		catch (final SQLException e) {
 			this.getLogger().log(Level.SEVERE, "MySQL error.");
@@ -74,7 +74,7 @@ public class Forums_StoreSync extends JavaPlugin {
 		}
 
 		if (args.length == 1) {
-			sender.sendMessage(this.configMan.config.getString("lang.NoPermission"));
+			sender.sendMessage(this.configMan.lang.getString("lang.NoPermission"));
 			return true;
 		}
 

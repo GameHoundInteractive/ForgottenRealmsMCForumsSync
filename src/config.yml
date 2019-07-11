@@ -2,12 +2,6 @@
 #### https://gamehoundsinteractive.com
 #### Version 2.0
 
-
-packages:
-  example:
-    - 'give %player% diamond 64'
-    - 'msg %player% You got 64 diamonds!'
-
 sql:
   host: 'localhost'  
   database: db
@@ -16,15 +10,8 @@ sql:
   port: 3306
   
 settings:
-  ##checktime: 60 ## Time it auto checks to see if new purchases  coming soon
-  ##autocheck: false ## Turns on auto checking  coming soon
+  checktime: 60 ## Coming Soon! Time it auto checks to see if new purchases
+  autocheck: false ## Coming Soon! Turns on auto checking
   Permission: licenseredeem.redeem ## Currently Added
   APIKey: "" ## Coming Soon! Create a IPS API key and paste it here  https://invisioncommunity.com/developers/rest-api/index/
-  
-lang:
-  OnlyPlayer: 'Sorry, but this command can only be used as a player.'
-  UsedKey: 'Sorry, your key has already been redeemed. Please contact an admin or buy a new one.'
-  NotValid: 'Sorry, your key is not valid.'
-  SuccessRedeem: 'You have successfully redeemed the license key, Enjoy your new package!'
-  Help: 'Please use the license key shown on your forums purchase at https://sitehere.com'
-  NoPermission: 'Sorry, You do not have permission to use this command'
+  config-version: 2.0 ## Do Not Touch!
