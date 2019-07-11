@@ -18,11 +18,18 @@ import com.gamehoundsinteractive.ForumsSync.utils.configmanager.PackageManager;
 
 public class Forums_StoreSync implements CommandExecutor {
 
-	private LicenseRedeem pl;
-	private ConfigManager configman;
-	private LangManager langman;
-	private PackageManager packageman;
+	private final LicenseRedeem pl;
+	private final ConfigManager configman;
+	private final LangManager langman;
+	private final PackageManager packageman;
 	private SQLManager sqlMan;
+
+	public Forums_StoreSync() {
+		this.pl = LicenseRedeem.getInstance();
+		this.configman = pl.getConfigMan();
+		this.langman = pl.getLangMan();
+		this.packageman = pl.getPackageMan();
+	}
 
 	@Override
 	public final boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {

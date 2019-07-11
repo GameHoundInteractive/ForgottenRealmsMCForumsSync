@@ -14,13 +14,20 @@ import com.gamehoundsinteractive.ForumsSync.utils.configmanager.PackageManager;
 public class Forums_UserSync implements CommandExecutor{
 
 	@SuppressWarnings("unused")
-	private LicenseRedeem pl;
-	private ConfigManager configman;
-	private LangManager langman;
+	private final LicenseRedeem pl;
+	private final ConfigManager configman;
+	private final LangManager langman;
 	@SuppressWarnings("unused")
-	private PackageManager packageman;
+	private final PackageManager packageman;
 	@SuppressWarnings("unused")
 	private SQLManager sqlMan;
+
+	public Forums_UserSync() {
+		this.pl = LicenseRedeem.getInstance();
+		this.configman = pl.getConfigMan();
+		this.langman = pl.getLangMan();
+		this.packageman = pl.getPackageMan();
+	}
 
 	@Override
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {

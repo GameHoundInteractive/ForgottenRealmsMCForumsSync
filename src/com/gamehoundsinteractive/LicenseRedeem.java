@@ -13,12 +13,14 @@ import net.md_5.bungee.api.ChatColor;
 
 public class LicenseRedeem extends JavaPlugin
 {
+	private static LicenseRedeem instance;
 	private ConfigManager configMan;
 	private LangManager langMan;
 	private PackageManager packageMan;
 
 	@Override
 	public void onEnable() {
+		instance = this;
 		this.configMan = new ConfigManager(this);
 		this.langMan = new LangManager(this, langMan);
 		this.packageMan = new PackageManager(this, packageMan);
@@ -33,5 +35,21 @@ public class LicenseRedeem extends JavaPlugin
 		System.out.print(ChatColor.WHITE + "[ForgottenRealmsMCForumsSync]" + ChatColor.GOLD + "Welcome To Forums Sync");
 		System.out.print(ChatColor.WHITE + "[ForgottenRealmsMCForumsSync]" + ChatColor.GOLD + "Need support? Check our spigot page!");
 		System.out.print(ChatColor.WHITE + "[ForgottenRealmsMCForumsSync]" + ChatColor.GOLD + "Plugin is currently in beta!");
+	}
+
+	public ConfigManager getConfigMan() {
+		return configMan;
+	}
+
+	public LangManager getLangMan() {
+		return langMan;
+	}
+
+	public PackageManager getPackageMan() {
+		return packageMan;
+	}
+
+	public static LicenseRedeem getInstance() {
+		return instance;
 	}
 }
