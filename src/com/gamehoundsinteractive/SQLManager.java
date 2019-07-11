@@ -7,6 +7,8 @@ import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
 
+import com.gamehoundsinteractive.ForumsSync.utils.ConfigManagers.ConfigManager;
+
 public class SQLManager
 {
 	private final LicenseRedeem pl;
@@ -17,13 +19,13 @@ public class SQLManager
 	private final int port;
 	private java.sql.Connection conn;
 
-	public SQLManager(final LicenseRedeem pl, final ConfigManager configMan) {
+	public SQLManager(final LicenseRedeem pl, final ConfigManager configManager) {
 		this.pl = pl;
-		this.host = configMan.config.getString("sql.host");
-		this.database = configMan.config.getString("sql.database");
-		this.username = configMan.config.getString("sql.username");
-		this.password = configMan.config.getString("sql.password");
-		this.port = configMan.config.getInt("sql.port");
+		this.host = configManager.config.getString("sql.host");
+		this.database = configManager.config.getString("sql.database");
+		this.username = configManager.config.getString("sql.username");
+		this.password = configManager.config.getString("sql.password");
+		this.port = configManager.config.getInt("sql.port");
 		try {
 			this.connect();
 		}

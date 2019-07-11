@@ -12,6 +12,6 @@ sql:
 settings:
   checktime: 60 ## Coming Soon! Time it auto checks to see if new purchases
   autocheck: false ## Coming Soon! Turns on auto checking
-  Permission: licenseredeem.redeem ## Currently Added
+  permission: licenseredeem.redeem ## Currently Added
   APIKey: "" ## Coming Soon! Create a IPS API key and paste it here  https://invisioncommunity.com/developers/rest-api/index/
   config-version: 2.0 ## Do Not Touch!

@@ -4,4 +4,8 @@ version: 2.0
 main: com.gamehoundsinteractive.LicenseRedeem
 commands:
   claim:
-    description: Claim the reward for your license.
+    description: Claim the reward for your license
+    usage: /claim [licenceKey]
+  sync:
+    description: Sync your forums account with minecraft!
+    usage: /sync [Forums Name] [Forums Email]
