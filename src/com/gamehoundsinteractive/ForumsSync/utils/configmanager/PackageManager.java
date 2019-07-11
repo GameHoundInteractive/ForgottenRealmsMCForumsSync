@@ -1,4 +1,4 @@
-package com.gamehoundsinteractive.ForumsSync.utils.ConfigManagers;
+package com.gamehoundsinteractive.ForumsSync.utils.configmanager;
 
 import java.io.File;
 import java.util.logging.Level;
@@ -9,11 +9,11 @@ import com.gamehoundsinteractive.LicenseRedeem;
 
 
 
-public class Store_PackagesManager
+public class PackageManager
 {
 	public FileConfiguration store_packages;
 
-	public Store_PackagesManager(final LicenseRedeem pl) {
+	public PackageManager(final LicenseRedeem pl, final PackageManager packageMan) {
 		pl.getLogger().log(Level.INFO, "Loading configuration...");
 		if (!new File(pl.getDataFolder(), "store_packages.yml").exists()) {
 			pl.saveDefaultConfig();

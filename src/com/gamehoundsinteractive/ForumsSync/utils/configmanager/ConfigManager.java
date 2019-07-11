@@ -1,4 +1,4 @@
-package com.gamehoundsinteractive.ForumsSync.utils.ConfigManagers;
+package com.gamehoundsinteractive.ForumsSync.utils.configmanager;
 
 import java.io.File;
 import java.util.logging.Level;

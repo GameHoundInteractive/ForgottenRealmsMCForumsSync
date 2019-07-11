@@ -7,7 +7,7 @@ import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
 
-import com.gamehoundsinteractive.ForumsSync.utils.ConfigManagers.ConfigManager;
+import com.gamehoundsinteractive.ForumsSync.utils.configmanager.ConfigManager;
 
 public class SQLManager
 {

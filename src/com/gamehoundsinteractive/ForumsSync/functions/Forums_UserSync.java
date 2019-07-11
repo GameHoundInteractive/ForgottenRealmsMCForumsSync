@@ -1,4 +1,4 @@
-package com.gamehoundsinteractive.ForumsSync;
+package com.gamehoundsinteractive.ForumsSync.functions;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -7,9 +7,9 @@ import org.bukkit.entity.Player;
 
 import com.gamehoundsinteractive.LicenseRedeem;
 import com.gamehoundsinteractive.SQLManager;
-import com.gamehoundsinteractive.ForumsSync.utils.ConfigManagers.ConfigManager;
-import com.gamehoundsinteractive.ForumsSync.utils.ConfigManagers.LangManager;
-import com.gamehoundsinteractive.ForumsSync.utils.ConfigManagers.Store_PackagesManager;
+import com.gamehoundsinteractive.ForumsSync.utils.configmanager.ConfigManager;
+import com.gamehoundsinteractive.ForumsSync.utils.configmanager.LangManager;
+import com.gamehoundsinteractive.ForumsSync.utils.configmanager.PackageManager;
 
 public class Forums_UserSync implements CommandExecutor{
 
@@ -18,7 +18,7 @@ public class Forums_UserSync implements CommandExecutor{
 	private ConfigManager configman;
 	private LangManager langman;
 	@SuppressWarnings("unused")
-	private Store_PackagesManager packageman;
+	private PackageManager packageman;
 	@SuppressWarnings("unused")
 	private SQLManager sqlMan;
 

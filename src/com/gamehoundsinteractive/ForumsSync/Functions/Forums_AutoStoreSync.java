@@ -1,7 +1,7 @@
-package com.gamehoundsinteractive.ForumsSync.Functions;
+package com.gamehoundsinteractive.ForumsSync.functions;
 
 import com.gamehoundsinteractive.SQLManager;
-import com.gamehoundsinteractive.ForumsSync.utils.ConfigManagers.ConfigManager;
+import com.gamehoundsinteractive.ForumsSync.utils.configmanager.ConfigManager;
 
 public class Forums_AutoStoreSync {
 

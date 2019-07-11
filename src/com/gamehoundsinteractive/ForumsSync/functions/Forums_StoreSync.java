@@ -1,4 +1,4 @@
-package com.gamehoundsinteractive.ForumsSync;
+package com.gamehoundsinteractive.ForumsSync.functions;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,16 +12,16 @@ import org.bukkit.entity.Player;
 
 import com.gamehoundsinteractive.LicenseRedeem;
 import com.gamehoundsinteractive.SQLManager;
-import com.gamehoundsinteractive.ForumsSync.utils.ConfigManagers.ConfigManager;
-import com.gamehoundsinteractive.ForumsSync.utils.ConfigManagers.LangManager;
-import com.gamehoundsinteractive.ForumsSync.utils.ConfigManagers.Store_PackagesManager;
+import com.gamehoundsinteractive.ForumsSync.utils.configmanager.ConfigManager;
+import com.gamehoundsinteractive.ForumsSync.utils.configmanager.LangManager;
+import com.gamehoundsinteractive.ForumsSync.utils.configmanager.PackageManager;
 
 public class Forums_StoreSync implements CommandExecutor {
 
 	private LicenseRedeem pl;
 	private ConfigManager configman;
 	private LangManager langman;
-	private Store_PackagesManager packageman;
+	private PackageManager packageman;
 	private SQLManager sqlMan;
 
 	@Override

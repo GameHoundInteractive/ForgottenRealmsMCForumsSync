@@ -1,4 +1,4 @@
-package com.gamehoundsinteractive.ForumsSync.utils.ConfigManagers;
+package com.gamehoundsinteractive.ForumsSync.utils.configmanager;
 
 import java.io.File;
 import java.util.logging.Level;
@@ -13,7 +13,7 @@ public class LangManager
 {
 	public FileConfiguration lang;
 
-	public LangManager(final LicenseRedeem pl) {
+	public LangManager(final LicenseRedeem pl, final LangManager lanman) {
 		pl.getLogger().log(Level.INFO, "Loading configuration...");
 		if (!new File(pl.getDataFolder(), "lang.yml").exists()) {
 			pl.saveDefaultConfig();
