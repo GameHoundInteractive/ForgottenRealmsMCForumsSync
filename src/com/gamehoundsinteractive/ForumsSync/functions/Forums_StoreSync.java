@@ -86,8 +86,8 @@ public class Forums_StoreSync implements CommandExecutor {
 				}
 				return true;
 			}
-			return false;
+			return true;
 		}
-		return false;
+		return true;
 	}
 }

@@ -2,9 +2,7 @@ package com.gamehoundsinteractive;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.gamehoundsinteractive.ForumsSync.functions.Forums_BansSync;
 import com.gamehoundsinteractive.ForumsSync.functions.Forums_StoreSync;
-import com.gamehoundsinteractive.ForumsSync.functions.Forums_UserSync;
 import com.gamehoundsinteractive.ForumsSync.utils.configmanager.ConfigManager;
 import com.gamehoundsinteractive.ForumsSync.utils.configmanager.LangManager;
 import com.gamehoundsinteractive.ForumsSync.utils.configmanager.PackageManager;
@@ -21,14 +19,14 @@ public class LicenseRedeem extends JavaPlugin
 	@Override
 	public void onEnable() {
 		instance = this;
-		this.configMan = new ConfigManager(this);
+		this.configMan = new ConfigManager(this, configMan);
 		this.langMan = new LangManager(this, langMan);
 		this.packageMan = new PackageManager(this, packageMan);
 		new SQLManager(this, this.configMan);
 
 		this.getCommand("claim").setExecutor(new Forums_StoreSync());
-		this.getCommand("sync").setExecutor(new Forums_UserSync());
-		this.getCommand("listforumbans").setExecutor(new Forums_BansSync());
+		// this.getCommand("sync").setExecutor(new Forums_UserSync());
+		// this.getCommand("listforumbans").setExecutor(new Forums_BansSync());
 
 		// Startup Message
 

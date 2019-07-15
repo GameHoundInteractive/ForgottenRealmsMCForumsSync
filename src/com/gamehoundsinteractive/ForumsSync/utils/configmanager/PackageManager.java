@@ -16,7 +16,7 @@ public class PackageManager
 	public PackageManager(final LicenseRedeem pl, final PackageManager packageMan) {
 		pl.getLogger().log(Level.INFO, "Loading configuration...");
 		if (!new File(pl.getDataFolder(), "store_packages.yml").exists()) {
-			pl.saveDefaultConfig();
+			pl.saveResource("store_packages.yml", false);
 		}
 		this.store_packages = pl.getConfig();
 	}

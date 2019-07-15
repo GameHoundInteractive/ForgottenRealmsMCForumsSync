@@ -12,7 +12,6 @@ import com.gamehoundsinteractive.ForumsSync.utils.configmanager.LangManager;
 import com.gamehoundsinteractive.ForumsSync.utils.configmanager.PackageManager;
 public class Forums_BansSync implements CommandExecutor {
 
-	@SuppressWarnings("unused")
 	private final LicenseRedeem pl;
 	private final ConfigManager configman;
 	private final LangManager langman;

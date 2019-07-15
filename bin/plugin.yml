@@ -6,6 +6,6 @@ commands:
   claim:
     description: Claim the reward for your license
     usage: /claim [licenceKey]
-  sync:
-    description: Sync your forums account with minecraft!
-    usage: /sync [Forums Name] [Forums Email]
+  #sync:
+    #description: Sync your forums account with minecraft!
+    #usage: /sync [Forums Name] [Forums Email]

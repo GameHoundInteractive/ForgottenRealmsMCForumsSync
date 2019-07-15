@@ -13,10 +13,10 @@ public class LangManager
 {
 	public FileConfiguration lang;
 
-	public LangManager(final LicenseRedeem pl, final LangManager lanman) {
+	public LangManager(LicenseRedeem pl, LangManager langMan) {
 		pl.getLogger().log(Level.INFO, "Loading configuration...");
 		if (!new File(pl.getDataFolder(), "lang.yml").exists()) {
-			pl.saveDefaultConfig();
+			pl.saveResource("lang.yml", false);
 		}
 		this.lang = pl.getConfig();
 	}
