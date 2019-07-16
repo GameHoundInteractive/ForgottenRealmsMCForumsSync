@@ -14,7 +14,7 @@ public class LangManager
 	public FileConfiguration lang;
 
 	public LangManager(LicenseRedeem pl, LangManager langMan) {
-		pl.getLogger().log(Level.INFO, "Loading configuration...");
+		pl.getLogger().log(Level.INFO, "Loading lang.yml");
 		if (!new File(pl.getDataFolder(), "lang.yml").exists()) {
 			pl.saveResource("lang.yml", false);
 		}

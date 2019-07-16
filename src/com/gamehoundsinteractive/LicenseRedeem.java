@@ -30,9 +30,14 @@ public class LicenseRedeem extends JavaPlugin
 
 		// Startup Message
 
-		System.out.print(ChatColor.WHITE + "[ForgottenRealmsMCForumsSync]" + ChatColor.GOLD + "Welcome To Forums Sync");
-		System.out.print(ChatColor.WHITE + "[ForgottenRealmsMCForumsSync]" + ChatColor.GOLD + "Need support? Check our spigot page!");
-		System.out.print(ChatColor.WHITE + "[ForgottenRealmsMCForumsSync]" + ChatColor.GOLD + "Plugin is currently in beta!");
+		System.out.println(ChatColor.GREEN + "[ForgottenRealmsMCForumsSync] " + ChatColor.BOLD + ChatColor.GOLD + " Welcome To Invision Powersoftware Store Sync");
+		System.out.println(ChatColor.GREEN + "[ForgottenRealmsMCForumsSync] " + ChatColor.BOLD + ChatColor.GOLD + " Need support? Check our spigot page!");
+		System.out.println(ChatColor.GREEN + " " + ChatColor.GOLD + " ");
+		System.out.println(ChatColor.GREEN + "[ForgottenRealmsMCForumsSync] " + ChatColor.BOLD + ChatColor.GOLD + " #############################################");
+		System.out.println(ChatColor.GREEN + "[ForgottenRealmsMCForumsSync] " + ChatColor.BOLD + ChatColor.GOLD + " ## Website: https://gamehoundsinteractive.com");
+		System.out.println(ChatColor.GREEN + "[ForgottenRealmsMCForumsSync] " + ChatColor.BOLD + ChatColor.GOLD + " ## Discord: https://discord.gg/5s5BgeB");
+		System.out.println(ChatColor.GREEN + "[ForgottenRealmsMCForumsSync] " + ChatColor.BOLD + ChatColor.GOLD + " ## Made by GHStudios");
+		System.out.println(ChatColor.GREEN + "[ForgottenRealmsMCForumsSync] " + ChatColor.BOLD + ChatColor.GOLD + " #############################################");
 	}
 
 	public ConfigManager getConfigMan() {

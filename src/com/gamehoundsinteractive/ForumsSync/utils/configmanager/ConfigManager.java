@@ -13,8 +13,9 @@ public class ConfigManager
 {
 	public FileConfiguration config;
 
+
 	public ConfigManager(LicenseRedeem pl, ConfigManager configMan) {
-		pl.getLogger().log(Level.INFO, "Loading configuration...");
+		pl.getLogger().log(Level.INFO, "Loading Config.yml");
 		if (!new File(pl.getDataFolder(), "config.yml").exists()) {
 			pl.saveDefaultConfig();
 		}

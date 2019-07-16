@@ -29,6 +29,10 @@ public class Forums_StoreSync implements CommandExecutor {
 		this.configman = pl.getConfigMan();
 		this.langman = pl.getLangMan();
 		this.packageman = pl.getPackageMan();
+
+		if (this.configman.config.getBoolean("settings.debug") != true) {
+			System.out.println("Forums_Story_Sync.java loaded!");
+		}
 	}
 
 	@Override
@@ -84,10 +88,10 @@ public class Forums_StoreSync implements CommandExecutor {
 					this.pl.getLogger().log(Level.SEVERE, "MySQL error.");
 					e.printStackTrace();
 				}
-				return true;
+				return false;
 			}
-			return true;
+			return false;
 		}
-		return true;
+		return false;
 	}
 }

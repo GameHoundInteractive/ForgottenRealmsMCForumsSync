@@ -1,31 +1,30 @@
 package com.gamehoundsinteractive.ForumsSync.functions;
 
+import java.util.logging.Level;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.gamehoundsinteractive.LicenseRedeem;
-import com.gamehoundsinteractive.SQLManager;
 import com.gamehoundsinteractive.ForumsSync.utils.configmanager.ConfigManager;
 import com.gamehoundsinteractive.ForumsSync.utils.configmanager.LangManager;
-import com.gamehoundsinteractive.ForumsSync.utils.configmanager.PackageManager;
 
 public class Forums_UserSync implements CommandExecutor{
 
 	private final LicenseRedeem pl;
 	private final ConfigManager configman;
 	private final LangManager langman;
-	@SuppressWarnings("unused")
-	private final PackageManager packageman;
-	@SuppressWarnings("unused")
-	private SQLManager sqlMan;
 
 	public Forums_UserSync() {
 		this.pl = LicenseRedeem.getInstance();
 		this.configman = pl.getConfigMan();
 		this.langman = pl.getLangMan();
-		this.packageman = pl.getPackageMan();
+
+		if (this.configman.config.getBoolean("settings.debug") != true) {
+			pl.getLogger().log(Level.INFO, "Forums_UserSync class loaded!");
+		}
 	}
 
 	@Override
