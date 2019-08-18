@@ -5,19 +5,19 @@ import java.util.logging.Level;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
-import com.gamehoundsinteractive.LicenseRedeem;
+import com.gamehoundsinteractive.ForumsMain;
 
 
 
 public class LangManager
 {
-	public FileConfiguration lang;
+	public FileConfiguration langMan;
 
-	public LangManager(LicenseRedeem pl, LangManager langMan) {
-		pl.getLogger().log(Level.INFO, "Loading lang.yml");
-		if (!new File(pl.getDataFolder(), "lang.yml").exists()) {
-			pl.saveResource("lang.yml", false);
+	public LangManager(ForumsMain lm, LangManager langMan) {
+		lm.getLogger().log(Level.INFO, "Loading lang.yml");
+		if (!new File(lm.getDataFolder(), "lang.yml").exists()) {
+			lm.saveResource("lang.yml", false);
 		}
-		this.lang = pl.getConfig();
+		this.langMan = lm.getConfig();
 	}
 }

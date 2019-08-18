@@ -1,4 +1,4 @@
-package com.gamehoundsinteractive.ForumsSync.functions;
+package com.gamehoundsinteractive.ForumsSync.Functions;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,22 +10,22 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.gamehoundsinteractive.LicenseRedeem;
-import com.gamehoundsinteractive.SQLManager;
+import com.gamehoundsinteractive.ForumsMain;
+import com.gamehoundsinteractive.ForumsSync.utils.SQLManager;
 import com.gamehoundsinteractive.ForumsSync.utils.configmanager.ConfigManager;
 import com.gamehoundsinteractive.ForumsSync.utils.configmanager.LangManager;
 import com.gamehoundsinteractive.ForumsSync.utils.configmanager.PackageManager;
 
 public class Forums_StoreSync implements CommandExecutor {
 
-	private final LicenseRedeem pl;
-	private final ConfigManager configman;
-	private final LangManager langman;
-	private final PackageManager packageman;
-	private SQLManager sqlMan;
+	public ForumsMain pl;
+	public ConfigManager configman;
+	public LangManager langman;
+	public PackageManager packageman;
+	public SQLManager sqlMan;
 
 	public Forums_StoreSync() {
-		this.pl = LicenseRedeem.getInstance();
+		this.pl = ForumsMain.getInstance();
 		this.configman = pl.getConfigMan();
 		this.langman = pl.getLangMan();
 		this.packageman = pl.getPackageMan();
@@ -38,15 +38,15 @@ public class Forums_StoreSync implements CommandExecutor {
 	@Override
 	public final boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		if (cmd.getName().equalsIgnoreCase("claim") || !(sender instanceof Player)) {
-			sender.sendMessage(this.langman.lang.getString("lang.OnlyPlayer"));
-			if (!(sender.hasPermission(this.configman.config.getString("settings.permission")))) {
-				sender.sendMessage(this.langman.lang.getString("lang.NoPermission"));
+			sender.sendMessage(this.langman.langMan.getString("lang.OnlyPlayer"));
+			if (!sender.hasPermission(this.configman.config.getString("settings.permission"))) {
+				sender.sendMessage(this.langman.langMan.getString("lang.NoPermission"));
 				if (args.length == 0) {
-					sender.sendMessage(this.langman.lang.getString("lang.Help"));
+					sender.sendMessage(this.langman.langMan.getString("lang.Help"));
 					return true;
 				}
 				if (args[0].equalsIgnoreCase("help")) {
-					sender.sendMessage(this.langman.lang.getString("lang.Help"));
+					sender.sendMessage(this.langman.langMan.getString("lang.Help"));
 					return true;
 				}
 				try {
@@ -60,14 +60,14 @@ public class Forums_StoreSync implements CommandExecutor {
 						++count;
 					}
 					if (count == 0) {
-						sender.sendMessage(this.langman.lang.getString("lang.NotValid"));
+						sender.sendMessage(this.langman.langMan.getString("lang.NotValid"));
 						return true;
 					}
 					if (result.isAfterLast()) {
 						result.previous();
 					}
 					if (result.getInt(1) != 1) {
-						sender.sendMessage(this.langman.lang.getString("lang.UsedKey"));
+						sender.sendMessage(this.langman.langMan.getString("lang.UsedKey"));
 						return true;
 					}
 					final ResultSet result2 = this.sqlMan.runSQL("SELECT * FROM nexus_purchases WHERE ps_id='" + result.getInt(2) + "'", false);
@@ -82,7 +82,7 @@ public class Forums_StoreSync implements CommandExecutor {
 						Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", sender.getName()));
 					}
 					this.sqlMan.runSQL("UPDATE nexus_licensekeys SET lkey_active=0, lkey_uses=1 WHERE lkey_key='" + args[0] + "'", true);
-					sender.sendMessage(this.langman.lang.getString("lang.SuccessRedeem"));
+					sender.sendMessage(this.langman.langMan.getString("lang.SuccessRedeem"));
 				}
 				catch (final SQLException e) {
 					this.pl.getLogger().log(Level.SEVERE, "MySQL error.");

@@ -5,7 +5,7 @@ import java.util.logging.Level;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
-import com.gamehoundsinteractive.LicenseRedeem;
+import com.gamehoundsinteractive.ForumsMain;
 
 
 
@@ -13,12 +13,11 @@ public class ConfigManager
 {
 	public FileConfiguration config;
 
-
-	public ConfigManager(LicenseRedeem pl, ConfigManager configMan) {
-		pl.getLogger().log(Level.INFO, "Loading Config.yml");
-		if (!new File(pl.getDataFolder(), "config.yml").exists()) {
-			pl.saveDefaultConfig();
+	public ConfigManager(ForumsMain cm, ConfigManager configMan) {
+		cm.getLogger().log(Level.INFO, "Loading Config.yml");
+		if (!new File(cm.getDataFolder(), "config.yml").exists()) {
+			cm.saveDefaultConfig();
 		}
-		this.config = pl.getConfig();
+		this.config = cm.getConfig();
 	}
 }

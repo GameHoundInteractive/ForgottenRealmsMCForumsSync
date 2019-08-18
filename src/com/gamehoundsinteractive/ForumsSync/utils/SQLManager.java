@@ -1,4 +1,4 @@
-package com.gamehoundsinteractive;
+package com.gamehoundsinteractive.ForumsSync.utils;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -7,11 +7,12 @@ import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
 
+import com.gamehoundsinteractive.ForumsMain;
 import com.gamehoundsinteractive.ForumsSync.utils.configmanager.ConfigManager;
 
 public class SQLManager
 {
-	private final LicenseRedeem pl;
+	private final ForumsMain pl;
 	private final String host;
 	private final String database;
 	private final String username;
@@ -19,7 +20,7 @@ public class SQLManager
 	private final int port;
 	private java.sql.Connection conn;
 
-	public SQLManager(final LicenseRedeem pl, final ConfigManager configManager) {
+	public SQLManager(final ForumsMain pl, final ConfigManager configManager) {
 		this.pl = pl;
 		this.host = configManager.config.getString("sql.host");
 		this.database = configManager.config.getString("sql.database");

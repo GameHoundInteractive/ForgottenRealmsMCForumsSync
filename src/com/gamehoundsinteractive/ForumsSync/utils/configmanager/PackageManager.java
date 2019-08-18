@@ -5,7 +5,7 @@ import java.util.logging.Level;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
-import com.gamehoundsinteractive.LicenseRedeem;
+import com.gamehoundsinteractive.ForumsMain;
 
 
 
@@ -13,11 +13,11 @@ public class PackageManager
 {
 	public FileConfiguration store_packages;
 
-	public PackageManager(final LicenseRedeem pl, final PackageManager packageMan) {
-		pl.getLogger().log(Level.INFO, "Loading store_packages.yml");
-		if (!new File(pl.getDataFolder(), "store_packages.yml").exists()) {
-			pl.saveResource("store_packages.yml", false);
+	public PackageManager(final ForumsMain pm, final PackageManager packageMan) {
+		pm.getLogger().log(Level.INFO, "Loading store_packages.yml");
+		if (!new File(pm.getDataFolder(), "store_packages.yml").exists()) {
+			pm.saveResource("store_packages.yml", false);
 		}
-		this.store_packages = pl.getConfig();
+		this.store_packages = pm.getConfig();
 	}
 }

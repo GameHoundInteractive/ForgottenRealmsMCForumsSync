@@ -1,7 +1,7 @@
 name: ForgottenRealmsMCForumsSync
 author: [GHStudios, MisterMel]
 version: 2.0
-main: com.gamehoundsinteractive.LicenseRedeem
+main: com.gamehoundsinteractive.ForumsMain
 commands:
   claim:
     description: Claim the reward for your license
