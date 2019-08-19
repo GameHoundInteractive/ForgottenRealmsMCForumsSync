@@ -12,6 +12,7 @@ import com.gamehoundsinteractive.ForumsSync.utils.configmanager.ConfigManager;
 
 public class SQLManager
 {
+	public ConfigManager configman;
 	private final ForumsMain pl;
 	private final String host;
 	private final String database;
@@ -20,13 +21,14 @@ public class SQLManager
 	private final int port;
 	private java.sql.Connection conn;
 
-	public SQLManager(final ForumsMain pl, final ConfigManager configManager) {
-		this.pl = pl;
-		this.host = configManager.config.getString("sql.host");
-		this.database = configManager.config.getString("sql.database");
-		this.username = configManager.config.getString("sql.username");
-		this.password = configManager.config.getString("sql.password");
-		this.port = configManager.config.getInt("sql.port");
+	public SQLManager(final ForumsMain pl, final SQLManager sQLMan) {
+		this.pl = ForumsMain.getInstance();
+		this.configman = pl.getConfigMan();
+		this.host = configman.config.getString("sql.host");
+		this.database = configman.config.getString("sql.database");
+		this.username = configman.config.getString("sql.username");
+		this.password = configman.config.getString("sql.password");
+		this.port = configman.config.getInt("sql.port");
 		try {
 			this.connect();
 		}

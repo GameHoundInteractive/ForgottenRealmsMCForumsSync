@@ -16,14 +16,15 @@ public class ForumsMain extends JavaPlugin
 	public ConfigManager configMan;
 	public LangManager langMan;
 	public PackageManager packageMan;
+	public SQLManager SQLMan;
 
 	@Override
-	public void onEnable() {
+	public void onEnable() {		
 		instance = this;
 		this.configMan = new ConfigManager(this, configMan);
-		this.langMan = new LangManager(this, langMan);
 		this.packageMan = new PackageManager(this, packageMan);
-		new SQLManager(this, this.configMan);
+		this.SQLMan = new SQLManager(this, SQLMan);
+//		new SQLManager(this, this.configMan);
 		
 		new Forums_StoreSync();
 
@@ -52,6 +53,10 @@ public class ForumsMain extends JavaPlugin
 
 	public PackageManager getPackageMan() {
 		return packageMan;
+	}
+	
+	public SQLManager getSQLMan() {
+		return SQLMan;
 	}
 
 	public static ForumsMain getInstance() {

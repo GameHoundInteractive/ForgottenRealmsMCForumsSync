@@ -15,12 +15,12 @@ public class Forums_UserSync implements CommandExecutor{
 
 	private final ForumsMain pl;
 	private final ConfigManager configman;
-	private final LangManager langman;
+	private final LangManager langMan;
 
 	public Forums_UserSync() {
 		this.pl = ForumsMain.getInstance();
 		this.configman = pl.getConfigMan();
-		this.langman = pl.getLangMan();
+		this.langMan = pl.getLangMan();
 
 		if (this.configman.config.getBoolean("settings.debug") != true) {
 			pl.getLogger().log(Level.INFO, "Forums_UserSync class loaded!");
@@ -30,10 +30,10 @@ public class Forums_UserSync implements CommandExecutor{
 	@Override
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		if (cmd.getName().equalsIgnoreCase("sync") || !(sender instanceof Player)) {
-			sender.sendMessage(this.langman.langMan.getString("OnlyPlayer"));
+			sender.sendMessage(langMan.getLangConfig().getString("OnlyPlayer"));
 		}
 		if (!sender.hasPermission(this.configman.config.getString("Permission"))) {
-			sender.sendMessage(this.langman.langMan.getString("NoPermission"));
+			sender.sendMessage(langMan.getLangConfig().getString("NoPermission"));
 		}
 		if (null != null) {
 			// Function here!
