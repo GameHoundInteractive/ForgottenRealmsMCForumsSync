@@ -33,13 +33,13 @@ public class ForumsMain extends JavaPlugin
 		// this.getCommand("listforumbans").setExecutor(new Forums_BansSync());
 
 		// Startup Message
-		System.out.println(ChatColor.GREEN + "[ForgottenRealmsMCForumsSync] " + ChatColor.BOLD + ChatColor.GOLD + " Welcome To Invision Powersoftware Sync");
+		System.out.println(ChatColor.GREEN + "[ForgottenRealmsMCForumsSync] " + ChatColor.BOLD + ChatColor.GOLD + " Welcome To Invision Forums MC Sync");
 		System.out.println(ChatColor.GREEN + "[ForgottenRealmsMCForumsSync] " + ChatColor.BOLD + ChatColor.GOLD + " Need support? Join our discord!");
 		System.out.println(ChatColor.GREEN + " " + ChatColor.GOLD + " ");
 		System.out.println(ChatColor.GREEN + "[ForgottenRealmsMCForumsSync] " + ChatColor.BOLD + ChatColor.GOLD + " #############################################");
-		System.out.println(ChatColor.GREEN + "[ForgottenRealmsMCForumsSync] " + ChatColor.BOLD + ChatColor.GOLD + " ## Website: https://gamehoundsinteractive.com");
+		System.out.println(ChatColor.GREEN + "[ForgottenRealmsMCForumsSync] " + ChatColor.BOLD + ChatColor.GOLD + " ## Website: https://thetechnologystudio.com");
 		System.out.println(ChatColor.GREEN + "[ForgottenRealmsMCForumsSync] " + ChatColor.BOLD + ChatColor.GOLD + " ## Discord: https://discord.gg/5s5BgeB");
-		System.out.println(ChatColor.GREEN + "[ForgottenRealmsMCForumsSync] " + ChatColor.BOLD + ChatColor.GOLD + " ## Made by GHStudios");
+		System.out.println(ChatColor.GREEN + "[ForgottenRealmsMCForumsSync] " + ChatColor.BOLD + ChatColor.GOLD + " ## Made by TheTechDev");
 		System.out.println(ChatColor.GREEN + "[ForgottenRealmsMCForumsSync] " + ChatColor.BOLD + ChatColor.GOLD + " #############################################");
 	}
 
